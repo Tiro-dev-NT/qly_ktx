@@ -1,6 +1,6 @@
 import os
 import json
-from project.models import Room, Student, Contract, ServiceBill
+from models import Room, Student, Contract, ServiceBill
 
 # Đường dẫn folder DATA, thư viện os giúp ghép đường dẫn
 DATA_DIR = "data"
