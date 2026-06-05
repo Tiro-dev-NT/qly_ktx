@@ -1,7 +1,7 @@
 def sort_students_by_name(students: list) -> list:
     """
-    Sắp xếp danh sách sinh viên theo tên bằng thuật toán Merge Sort.
-    Không làm thay đổi danh sách gốc mà trả về một danh sách mới.
+    Sắp xếp danh sách sinh viên theo tên bằng thuật toán Merge Sort
+    Không làm thay đổi danh sách gốc mà trả về một danh sách mới
     """
     # Điều kiện dừng của đệ quy: nếu list có 1 hoặc 0 phần tử thì đã được "sắp xếp"
     if len(students) <= 1:
