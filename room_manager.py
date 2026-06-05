@@ -72,4 +72,4 @@ def check_room_availability(room_id: str) -> bool:
     room = get_room_by_id(room_id)
     if room is None:
         return False
-    return room.is_available()   # dùng lại method có sẵn
+    return room.is_available()
