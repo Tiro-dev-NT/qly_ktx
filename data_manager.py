@@ -110,14 +110,27 @@ def save_rooms(rooms: list[Room]):
     data = [room.to_dict() for room in rooms]  # chuyển list Room → list dict
     _write_json(ROOMS_FILE, data)              # ghi xuống file
 def save_students(students: list[Student]):
-    pass
+    data = [students.to_dict() for stu in students]
+    _write_json(STUDENTS_FILE, data)
 def save_contracts(contracts: list[Contract]):
-    pass
+    data = [contract.to_dict() for contract in contracts]
+    _write_json(CONTRACTS_FILE, data)
 def save_service_bills(bills: list[ServiceBill]):
-    pass
+    data = [bill.to_dict() for bill in bills]
+    _write_json(BILLS_FILE, data)
+    
+    
 def _read_json(filepath: str) -> list:
-    pass
+    if not os.path.exists(filepath):  # file chưa tồn tại → trả list rỗng
+        return []
+    with open(filepath, "r", encoding="utf-8") as f:
+        return json.load(f)
+    
 def _write_json(filepath: str, data: list):
-    pass
+    with open(filepath, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
+
 def _ensure_data_loaded():
-    pass
+    global _data_loaded
+    if not _data_loaded:
+        load_all_data_once()
