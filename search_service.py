@@ -76,3 +76,15 @@ def _get_vietnamese_sort_key(full_name: str) -> tuple:
     # Trả về tuple: Python sẽ tự động so sánh 'ten' trước, 
     # nếu 'ten' giống nhau thì sẽ so sánh tiếp 'ho_dem'
     return (ten, ho_dem)
+
+def _insertion_sort_room_by_price(rooms):
+    pass
+
+def _binary_search_room(sorted_rooms, room_id):
+    pass
+
+def search_room_by_id(room_id):
+    pass
+
+def search_room_by_type_or_status(query):
+    pass
