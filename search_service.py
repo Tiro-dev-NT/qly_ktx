@@ -1,3 +1,4 @@
+import data_manager as dm
 def sort_students_by_name(students: list) -> list:
     """
     Sắp xếp danh sách sinh viên theo tên bằng thuật toán Merge Sort
@@ -77,14 +78,39 @@ def _get_vietnamese_sort_key(full_name: str) -> tuple:
     # nếu 'ten' giống nhau thì sẽ so sánh tiếp 'ho_dem'
     return (ten, ho_dem)
 
-def _insertion_sort_room_by_price(rooms):
-    pass
-
+def _insertion_sort_room_by_price(rooms: list) -> list:
+    """Sắp xếp phòng theo giá tăng dần — Insertion Sort"""
+    for i in range(1, len(rooms)):
+        key = rooms[i]
+        j = i - 1
+        while j >= 0 and rooms[j].price_per_month > key.price_per_month:
+            rooms[j + 1] = rooms[j]
+            j -= 1
+        rooms[j + 1] = key
+    return rooms
 def _binary_search_room(sorted_rooms, room_id):
-    pass
-
+    """Tìm phòng theo room_id"""
+    left = 0
+    right = len(sorted_rooms)-1
+    while left <= right:
+        mid = (left + right) // 2
+        if sorted_rooms[mid] == room_id:
+            return mid
+        elif sorted_rooms[mid] < room_id:
+            left = mid + 1
+        else:
+            right = mid - 1
+    return None
 def search_room_by_id(room_id):
-    pass
+    dm._ensure_data_loaded()
+    return _binary_search_room(dm.ALL_ROOMS, room_id)
 
 def search_room_by_type_or_status(query):
-    pass
+    dm._ensure_data_loaded()
+    key = str(query).strip().lower()
+    lst = []
+    for room in dm.ALL_ROOMS:
+        if str(room.room_type) == key or room.status.lower() == key:
+            lst.append(room)
+    return lst
+    
