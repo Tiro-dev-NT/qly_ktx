@@ -113,4 +113,72 @@ def search_room_by_type_or_status(query):
         if str(room.room_type) == key or room.status.lower() == key:
             lst.append(room)
     return lst
-    
+
+
+
+ def _bubble_sort_bills_by_amount(bills: list) -> list:
+    n = len(bills)
+    for i in range(n):
+        for j in range(0, n - i - 1):
+            if bills[j].total_amount < bills[j + 1].total_amount:
+                bills[j], bills[j + 1] = bills[j + 1], bills[j]
+    return bills
+
+def _merge(left: list, right: list) -> list:
+    result = []
+    i = j = 0
+    while i < len(left) and j < len(right):
+        if left[i].full_name.lower() <= right[j].full_name.lower():
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    result.extend(left[i:])
+    result.extend(right[j:])
+    return result
+
+def _merge_sort_students_by_name(students: list) -> list:
+    if len(students) <= 1:
+        return students
+    mid = len(students) // 2
+    left = _merge_sort_students_by_name(students[:mid])
+    right = _merge_sort_students_by_name(students[mid:])
+    return _merge(left, right)
+
+TABLE_SIZE = 100
+
+def _hash_function(key: str) -> int:
+    return sum(ord(c) for c in key) % TABLE_SIZE
+
+def _hash_table_build(students: list) -> list:
+    table = [None] * TABLE_SIZE
+    for student in students:
+        index = _hash_function(student.student_id)
+        while table[index] is not None:
+            index = (index + 1) % TABLE_SIZE
+        table[index] = student
+    return table
+
+def _hash_table_lookup(table: list, student_id: str):
+    index = _hash_function(student_id)
+    start_index = index
+    while table[index] is not None:
+        if table[index].student_id == student_id:
+            return table[index]
+        index = (index + 1) % TABLE_SIZE
+        if index == start_index:
+            break
+    return None
+
+def search_student_by_id(student_id: str):
+    table = _hash_table_build(data_manager.ALL_STUDENTS)
+    return _hash_table_lookup(table, student_id)
+
+def search_student_by_name(name_query: str) -> list:
+    result = []
+    query = name_query.lower()
+    for student in data_manager.ALL_STUDENTS:
+        if query in student.full_name.lower():
+            result.append(student)
+    return result   
