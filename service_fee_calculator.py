@@ -1,4 +1,4 @@
-import data_manager
+import data_manager as dm
 from models import ServiceBill
 from datetime import datetime, timedelta
 
@@ -34,7 +34,7 @@ def record_monthly_usage(room_id: str, month: int, year: int, e_start: int, e_en
         return False
 
     active_contract = None
-    for contract in data_manager.ALL_CONTRACTS:
+    for contract in dm.ALL_CONTRACTS:
         if contract.room_id == room_id and contract.status == "active":
             active_contract = contract
             break
@@ -44,7 +44,7 @@ def record_monthly_usage(room_id: str, month: int, year: int, e_start: int, e_en
 
     bill_id = _generate_bill_id(active_contract.contract_id, month, year)
     
-    for bill in data_manager.ALL_BILLS:
+    for bill in dm.ALL_BILLS:
         if bill.bill_id == bill_id:
             return False
 
@@ -65,34 +65,34 @@ def record_monthly_usage(room_id: str, month: int, year: int, e_start: int, e_en
         due_date=due_date, paid_date=None
     )
 
-    data_manager.ALL_BILLS.append(new_bill)
-    data_manager.save_service_bills(data_manager.ALL_BILLS)
+    dm.ALL_BILLS.append(new_bill)
+    dm.save_service_bills(dm.ALL_BILLS)
     return True
 
 def pay_bill(bill_id: str) -> bool:
-    for bill in data_manager.ALL_BILLS:
+    for bill in dm.ALL_BILLS:
         if bill.bill_id == bill_id and bill.status == "unpaid":
             bill.status = "paid"
             bill.paid_date = datetime.now().strftime("%Y-%m-%d")
-            data_manager.save_service_bills(data_manager.ALL_BILLS)
+            dm.save_service_bills(dm.ALL_BILLS)
             return True
     return False
 
 def get_bills_by_room(room_id: str, month: int = None, year: int = None) -> list:
     result = []
-    for bill in data_manager.ALL_BILLS:
+    for bill in dm.ALL_BILLS:
         if bill.room_id == room_id:
             if (month is None or bill.month == month) and (year is None or bill.year == year):
                 result.append(bill)
     return result
 
 def get_unpaid_bills() -> list:
-    return [bill for bill in data_manager.ALL_BILLS if bill.status == "unpaid"]
+    return [bill for bill in dm.ALL_BILLS if bill.status == "unpaid"]
 
 def get_overdue_bills() -> list:
     overdue = []
     current_date = datetime.now().strftime("%Y-%m-%d")
-    for bill in data_manager.ALL_BILLS:
+    for bill in dm.ALL_BILLS:
         if bill.status == "unpaid" and bill.due_date < current_date:
             overdue.append(bill)
     return overdue
