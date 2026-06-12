@@ -116,7 +116,7 @@ def search_room_by_type_or_status(query):
 
 
 
- def _bubble_sort_bills_by_amount(bills: list) -> list:
+def _bubble_sort_bills_by_amount(bills: list) -> list:
     n = len(bills)
     for i in range(n):
         for j in range(0, n - i - 1):
@@ -172,13 +172,13 @@ def _hash_table_lookup(table: list, student_id: str):
     return None
 
 def search_student_by_id(student_id: str):
-    table = _hash_table_build(data_manager.ALL_STUDENTS)
+    table = _hash_table_build(dm.ALL_STUDENTS)
     return _hash_table_lookup(table, student_id)
 
 def search_student_by_name(name_query: str) -> list:
     result = []
     query = name_query.lower()
-    for student in data_manager.ALL_STUDENTS:
+    for student in dm.ALL_STUDENTS:
         if query in student.full_name.lower():
             result.append(student)
     return result   
