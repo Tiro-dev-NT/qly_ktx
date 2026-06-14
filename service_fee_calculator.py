@@ -2,8 +2,13 @@ import data_manager as dm
 from models import ServiceBill
 from datetime import datetime, timedelta
 
-ELECTRIC_TIERS = [(50, 1806), (100, 1866), (200, 2167), (float('inf'), 2729)]
-WATER_UNIT_PRICE = 15929
+ELECTRIC_TIERS = [(50, 1806),
+                  (100, 1866), 
+                  (200, 2167), 
+                  (float('inf'), 2729)
+                  ]
+
+WATER_UNIT_PRICE = 15929 #Giá nước: đồng/m3
 
 def calculate_electric_fee(kwh_used: int) -> float:
     total_fee = 0.0
