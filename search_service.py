@@ -88,22 +88,35 @@ def _insertion_sort_room_by_price(rooms: list) -> list:
             j -= 1
         rooms[j + 1] = key
     return rooms
+def _insertion_sort_rooms_by_id(rooms: list) -> list:
+    """Sắp xếp phòng theo room_id tăng dần — Insertion Sort (dùng trước binary search)"""
+    for i in range(1, len(rooms)):
+        key = rooms[i]
+        j = i - 1
+        while j >= 0 and rooms[j].room_id > key.room_id:
+            rooms[j + 1] = rooms[j]
+            j -= 1
+        rooms[j + 1] = key
+    return rooms
+
 def _binary_search_room(sorted_rooms, room_id):
-    """Tìm phòng theo room_id"""
+    """Tìm phòng theo room_id trên mảng đã sắp xếp theo room_id"""
     left = 0
-    right = len(sorted_rooms)-1
+    right = len(sorted_rooms) - 1
     while left <= right:
         mid = (left + right) // 2
-        if sorted_rooms[mid] == room_id:
-            return mid
-        elif sorted_rooms[mid] < room_id:
+        if sorted_rooms[mid].room_id == room_id:
+            return sorted_rooms[mid]
+        elif sorted_rooms[mid].room_id < room_id:
             left = mid + 1
         else:
             right = mid - 1
     return None
+
 def search_room_by_id(room_id):
     dm._ensure_data_loaded()
-    return _binary_search_room(dm.ALL_ROOMS, room_id)
+    sorted_rooms = _insertion_sort_rooms_by_id(dm.ALL_ROOMS[:])
+    return _binary_search_room(sorted_rooms, room_id)
 
 def search_room_by_type_or_status(query):
     dm._ensure_data_loaded()
