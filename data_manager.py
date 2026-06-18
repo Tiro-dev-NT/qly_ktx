@@ -110,8 +110,13 @@ def save_rooms(rooms: list[Room]):
     data = [room.to_dict() for room in rooms]  # chuyển list Room → list dict
     _write_json(ROOMS_FILE, data)              # ghi xuống file
 def save_students(students: list[Student]):
-    data = [students.to_dict() for stu in students]
+    data = [stu.to_dict() for stu in students]
     _write_json(STUDENTS_FILE, data)
+
+def get_today_str() -> str:
+    """Trả về ngày hôm nay dạng YYYY-MM-DD"""
+    import datetime
+    return datetime.date.today().isoformat()
 def save_contracts(contracts: list[Contract]):
     data = [contract.to_dict() for contract in contracts]
     _write_json(CONTRACTS_FILE, data)
