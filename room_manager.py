@@ -43,10 +43,11 @@ def update_room(room_id, **kwargs) -> bool:
     if room is None: #Room không tồn tại
         return False
     # kwargs = {"price_per_month": 700000, "floor": 3}, tránh phải viết nhiều hàm update
-    for k, v in kwargs:
+    for k, v in kwargs.items():
         if hasattr(room, k):
             setattr(room, k, v)
-        
+    dm.save_rooms(dm.ALL_ROOMS)
+    return True        
 
 def delete_room(room_id: str) -> bool:
     room = get_room_by_id(room_id)
