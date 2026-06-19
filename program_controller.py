@@ -1,6 +1,6 @@
 import sys
 import contract_manager
-import data_manager
+import data_manager as dm
 import room_manager
 import student_manager
 import display_service
@@ -10,7 +10,7 @@ import report_service
 
 class AppController:
     def __init__(self):
-        data_manager.load_all_data_once()
+        dm.load_all_data_once()
 
     def display_main_menu(self):
         print("\n" + "="*45)
@@ -201,7 +201,7 @@ class AppController:
             display_service.display_not_found(f"phòng '{room_id}'")
             return
 
-        for contract in data_manager.ALL_CONTRACTS:
+        for contract in dm.ALL_CONTRACTS:
             if contract.room_id == room_id and contract.is_active():
                 display_service.display_error(
                     f"Không thể xóa phòng {room_id} vì đang có hợp đồng active.")

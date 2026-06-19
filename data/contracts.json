@@ -1,0 +1,110 @@
+[
+    {
+        "contract_id": "HD001",
+        "student_id": "202310001",
+        "room_id": "P101",
+        "start_date": "2025-09-01",
+        "end_date": "2026-08-31",
+        "status": "active",
+        "created_date": "2025-08-20"
+    },
+    {
+        "contract_id": "HD002",
+        "student_id": "202310002",
+        "room_id": "P101",
+        "start_date": "2025-09-01",
+        "end_date": "2026-08-31",
+        "status": "active",
+        "created_date": "2025-08-20"
+    },
+    {
+        "contract_id": "HD003",
+        "student_id": "202310003",
+        "room_id": "P102",
+        "start_date": "2025-09-01",
+        "end_date": "2026-08-31",
+        "status": "active",
+        "created_date": "2025-08-21"
+    },
+    {
+        "contract_id": "HD004",
+        "student_id": "202310004",
+        "room_id": "P102",
+        "start_date": "2025-09-01",
+        "end_date": "2026-08-31",
+        "status": "active",
+        "created_date": "2025-08-21"
+    },
+    {
+        "contract_id": "HD005",
+        "student_id": "202310005",
+        "room_id": "P102",
+        "start_date": "2025-09-01",
+        "end_date": "2026-08-31",
+        "status": "active",
+        "created_date": "2025-08-22"
+    },
+    {
+        "contract_id": "HD006",
+        "student_id": "202310006",
+        "room_id": "P102",
+        "start_date": "2025-09-01",
+        "end_date": "2026-08-31",
+        "status": "active",
+        "created_date": "2025-08-22"
+    },
+    {
+        "contract_id": "HD007",
+        "student_id": "202310007",
+        "room_id": "P103",
+        "start_date": "2025-09-01",
+        "end_date": "2026-08-31",
+        "status": "active",
+        "created_date": "2025-08-23"
+    },
+    {
+        "contract_id": "HD008",
+        "student_id": "202310008",
+        "room_id": "P201",
+        "start_date": "2025-09-01",
+        "end_date": "2026-08-31",
+        "status": "active",
+        "created_date": "2025-08-23"
+    },
+    {
+        "contract_id": "HD009",
+        "student_id": "202310009",
+        "room_id": "P201",
+        "start_date": "2025-09-01",
+        "end_date": "2026-08-31",
+        "status": "active",
+        "created_date": "2025-08-24"
+    },
+    {
+        "contract_id": "HD010",
+        "student_id": "202310010",
+        "room_id": "P201",
+        "start_date": "2025-09-01",
+        "end_date": "2026-08-31",
+        "status": "active",
+        "created_date": "2025-08-24"
+    },
+    {
+        "contract_id": "HD011",
+        "student_id": "202310011",
+        "room_id": "P301",
+        "start_date": "2025-09-01",
+        "end_date": "2026-01-31",
+        "status": "terminated",
+        "created_date": "2025-08-25"
+    },
+    {
+        "contract_id": "HD012",
+        "student_id": "202310012",
+        "room_id": "P103",
+        "start_date": "2024-09-01",
+        "end_date": "2025-08-31",
+        "status": "terminated",
+        "created_date": "2024-08-20"
+    }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "student_id": "202310001",
+        "full_name": "Nguyễn Văn An",
+        "class_name": "IT2301",
+        "phone": "0901234567",
+        "email": "an.nv2310001@hust.edu.vn",
+        "policy_type": "priority",
+        "enrollment_date": "2023-09-01"
+    },
+    {
+        "student_id": "202310002",
+        "full_name": "Trần Thị Bình",
+        "class_name": "IT2301",
+        "phone": "0912345678",
+        "email": "binh.tt2310002@hust.edu.vn",
+        "policy_type": "normal",
+        "enrollment_date": "2023-09-01"
+    },
+    {
+        "student_id": "202310003",
+        "full_name": "Lê Văn Cường",
+        "class_name": "IT2302",
+        "phone": "0923456789",
+        "email": "cuong.lv2310003@hust.edu.vn",
+        "policy_type": "normal",
+        "enrollment_date": "2023-09-01"
+    },
+    {
+        "student_id": "202310004",
+        "full_name": "Phạm Thị Dung",
+        "class_name": "IT2302",
+        "phone": "0934567890",
+        "email": "dung.pt2310004@hust.edu.vn",
+        "policy_type": "priority",
+        "enrollment_date": "2023-09-01"
+    },
+    {
+        "student_id": "202310005",
+        "full_name": "Hoàng Văn Em",
+        "class_name": "EC2301",
+        "phone": "0945678901",
+        "email": "em.hv2310005@hust.edu.vn",
+        "policy_type": "normal",
+        "enrollment_date": "2023-09-01"
+    },
+    {
+        "student_id": "202310006",
+        "full_name": "Đỗ Thị Phương",
+        "class_name": "EC2301",
+        "phone": "0956789012",
+        "email": "phuong.dt2310006@hust.edu.vn",
+        "policy_type": "normal",
+        "enrollment_date": "2023-09-01"
+    },
+    {
+        "student_id": "202310007",
+        "full_name": "Ngô Văn Giang",
+        "class_name": "ME2301",
+        "phone": "0967890123",
+        "email": "giang.nv2310007@hust.edu.vn",
+        "policy_type": "priority",
+        "enrollment_date": "2023-09-01"
+    },
+    {
+        "student_id": "202310008",
+        "full_name": "Bùi Thị Hoa",
+        "class_name": "IT2303",
+        "phone": "0978901234",
+        "email": "hoa.bt2310008@hust.edu.vn",
+        "policy_type": "normal",
+        "enrollment_date": "2023-09-01"
+    },
+    {
+        "student_id": "202310009",
+        "full_name": "Vũ Văn Hùng",
+        "class_name": "IT2303",
+        "phone": "0989012345",
+        "email": "hung.vv2310009@hust.edu.vn",
+        "policy_type": "normal",
+        "enrollment_date": "2023-09-01"
+    },
+    {
+        "student_id": "202310010",
+        "full_name": "Đinh Thị Kim",
+        "class_name": "EC2302",
+        "phone": "0990123456",
+        "email": "kim.dt2310010@hust.edu.vn",
+        "policy_type": "priority",
+        "enrollment_date": "2023-09-01"
+    },
+    {
+        "student_id": "202310011",
+        "full_name": "Trương Văn Long",
+        "class_name": "ME2301",
+        "phone": "0901122334",
+        "email": "long.tv2310011@hust.edu.vn",
+        "policy_type": "normal",
+        "enrollment_date": "2023-09-01"
+    },
+    {
+        "student_id": "202310012",
+        "full_name": "Lý Thị Mai",
+        "class_name": "IT2302",
+        "phone": "0912233445",
+        "email": "mai.lt2310012@hust.edu.vn",
+        "policy_type": "normal",
+        "enrollment_date": "2023-09-01"
+    }
+]

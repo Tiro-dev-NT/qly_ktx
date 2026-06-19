@@ -1,0 +1,62 @@
+[
+    {
+        "room_id": "P101",
+        "room_type": 4,
+        "price_per_month": 800000,
+        "capacity": 4,
+        "current_occupants": 2,
+        "status": "available",
+        "floor": 1,
+        "building": "A"
+    },
+    {
+        "room_id": "P102",
+        "room_type": 4,
+        "price_per_month": 800000,
+        "capacity": 4,
+        "current_occupants": 4,
+        "status": "available",
+        "floor": 1,
+        "building": "A"
+    },
+    {
+        "room_id": "P103",
+        "room_type": 2,
+        "price_per_month": 1200000,
+        "capacity": 2,
+        "current_occupants": 1,
+        "status": "available",
+        "floor": 1,
+        "building": "A"
+    },
+    {
+        "room_id": "P201",
+        "room_type": 6,
+        "price_per_month": 600000,
+        "capacity": 6,
+        "current_occupants": 3,
+        "status": "available",
+        "floor": 2,
+        "building": "A"
+    },
+    {
+        "room_id": "P202",
+        "room_type": 6,
+        "price_per_month": 600000,
+        "capacity": 6,
+        "current_occupants": 0,
+        "status": "maintenance",
+        "floor": 2,
+        "building": "A"
+    },
+    {
+        "room_id": "P301",
+        "room_type": 4,
+        "price_per_month": 800000,
+        "capacity": 4,
+        "current_occupants": 0,
+        "status": "available",
+        "floor": 3,
+        "building": "B"
+    }
+]
