@@ -79,7 +79,7 @@ class Contract:
         self.created_date = created_date
 
     def __str__(self):
-        return f"Hợp đồng [{self.contract_id}] - MSSV {self.student_id} - Phòng [{self.room_id}] | status: '{self.status}"
+        return f"Hợp đồng [{self.contract_id}] - MSSV {self.student_id} - Phòng [{self.room_id}] | status: '{self.status}'"
 
     def __repr__(self):
         return (f"Contract(id='{self.contract_id}', student='{self.student_id}', "

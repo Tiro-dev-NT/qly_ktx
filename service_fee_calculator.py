@@ -2,31 +2,35 @@ import data_manager as dm
 from models import ServiceBill
 from datetime import datetime, timedelta
 
-ELECTRIC_TIERS = [(50, 1806),
-                  (100, 1866), 
-                  (200, 2167), 
-                  (float('inf'), 2729)
+# Biểu giá điện sinh hoạt lũy tiến 6 bậc của EVN (đơn giá CHƯA gồm VAT).
+# Mỗi phần tử: (số kWh tối đa trong bậc, đơn giá đ/kWh).
+ELECTRIC_TIERS = [(50, 1984),            # Bậc 1: 50 kWh đầu tiên (0-50)
+                  (50, 2050),            # Bậc 2: 50 kWh tiếp theo (51-100)
+                  (100, 2380),           # Bậc 3: 100 kWh tiếp theo (101-200)
+                  (100, 2998),           # Bậc 4: 100 kWh tiếp theo (201-300)
+                  (100, 3350),           # Bậc 5: 100 kWh tiếp theo (301-400)
+                  (float('inf'), 3460)   # Bậc 6: các kWh còn lại (401 trở lên)
                   ]
 
-WATER_UNIT_PRICE = 15929 #Giá nước: đồng/m3
+ELECTRIC_VAT_RATE = 0.08  # Thuế VAT điện sinh hoạt 8%
+WATER_UNIT_PRICE = 15929  # Giá nước: đồng/m3 (đã gồm VAT + phí dịch vụ thoát nước)
 
 def calculate_electric_fee(kwh_used: int) -> float:
-    total_fee = 0.0
-    remaining_kwh = kwh_used
-    previous_limit = 0
+    """Tính tiền điện theo biểu giá lũy tiến 6 bậc, kết quả ĐÃ gồm VAT 8%."""
+    if kwh_used <= 0:
+        return 0.0
 
+    base_amount = 0.0
+    remaining_kwh = kwh_used
     for limit, price in ELECTRIC_TIERS:
-        tier_amount = limit - previous_limit
         if remaining_kwh <= 0:
             break
-        if remaining_kwh > tier_amount and limit != float('inf'):
-            total_fee += tier_amount * price
-            remaining_kwh -= tier_amount
-        else:
-            total_fee += remaining_kwh * price
-            remaining_kwh = 0
-        previous_limit = limit
-    return total_fee
+        kwh_in_tier = min(remaining_kwh, limit)  # số kWh tính trong bậc này
+        base_amount += kwh_in_tier * price
+        remaining_kwh -= kwh_in_tier
+
+    total_fee = base_amount * (1 + ELECTRIC_VAT_RATE)  # cộng VAT vào tiền điện
+    return round(total_fee, 2)
 
 def calculate_water_fee(m3_used: int) -> float:
     return m3_used * WATER_UNIT_PRICE

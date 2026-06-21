@@ -137,28 +137,6 @@ def _bubble_sort_bills_by_amount(bills: list) -> list:
                 bills[j], bills[j + 1] = bills[j + 1], bills[j]
     return bills
 
-def _merge(left: list, right: list) -> list:
-    result = []
-    i = j = 0
-    while i < len(left) and j < len(right):
-        if left[i].full_name.lower() <= right[j].full_name.lower():
-            result.append(left[i])
-            i += 1
-        else:
-            result.append(right[j])
-            j += 1
-    result.extend(left[i:])
-    result.extend(right[j:])
-    return result
-
-def _merge_sort_students_by_name(students: list) -> list:
-    if len(students) <= 1:
-        return students
-    mid = len(students) // 2
-    left = _merge_sort_students_by_name(students[:mid])
-    right = _merge_sort_students_by_name(students[mid:])
-    return _merge(left, right)
-
 TABLE_SIZE = 100
 
 def _hash_function(key: str) -> int:
