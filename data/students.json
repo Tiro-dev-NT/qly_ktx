@@ -106,5 +106,23 @@
         "email": "mai.lt2310012@hust.edu.vn",
         "policy_type": "normal",
         "enrollment_date": "2023-09-01"
+    },
+    {
+        "student_id": "202410001",
+        "full_name": "Lê Thiêm Nam",
+        "class_name": "MI1-03",
+        "phone": "0887763456",
+        "email": "nam.lt2410001@hust.edu.vn",
+        "policy_type": "normal",
+        "enrollment_date": "2026-06-22"
+    },
+    {
+        "student_id": "202410002",
+        "full_name": "Cao Đức Thắng",
+        "class_name": "MI1-03",
+        "phone": "0558376834",
+        "email": "thang.cd2410002@hust.edu.vn",
+        "policy_type": "normal",
+        "enrollment_date": "2026-06-22"
     }
 ]

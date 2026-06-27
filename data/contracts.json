@@ -14,7 +14,7 @@
         "room_id": "P101",
         "start_date": "2025-09-01",
         "end_date": "2026-08-31",
-        "status": "active",
+        "status": "terminated",
         "created_date": "2025-08-20"
     },
     {
@@ -47,7 +47,7 @@
     {
         "contract_id": "HD006",
         "student_id": "202310006",
-        "room_id": "P102",
+        "room_id": "P101",
         "start_date": "2025-09-01",
         "end_date": "2026-08-31",
         "status": "active",
@@ -85,7 +85,7 @@
         "student_id": "202310010",
         "room_id": "P201",
         "start_date": "2025-09-01",
-        "end_date": "2026-08-31",
+        "end_date": "2027-12-31",
         "status": "active",
         "created_date": "2025-08-24"
     },
@@ -106,5 +106,14 @@
         "end_date": "2025-08-31",
         "status": "terminated",
         "created_date": "2024-08-20"
+    },
+    {
+        "contract_id": "HD013",
+        "student_id": "202410001",
+        "room_id": "P103",
+        "start_date": "2026-01-01",
+        "end_date": "2027-01-01",
+        "status": "active",
+        "created_date": "2026-06-22"
     }
 ]

@@ -10,7 +10,7 @@
 
 ```bash
 # Clone hoặc tải project
-cd project
+cd <project>
 
 # Chạy chương trình
 python main.py

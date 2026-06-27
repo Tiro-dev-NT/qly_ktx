@@ -14,7 +14,7 @@
         "room_type": 4,
         "price_per_month": 800000,
         "capacity": 4,
-        "current_occupants": 4,
+        "current_occupants": 3,
         "status": "available",
         "floor": 1,
         "building": "A"
@@ -24,7 +24,7 @@
         "room_type": 2,
         "price_per_month": 1200000,
         "capacity": 2,
-        "current_occupants": 1,
+        "current_occupants": 2,
         "status": "available",
         "floor": 1,
         "building": "A"
@@ -32,7 +32,7 @@
     {
         "room_id": "P201",
         "room_type": 6,
-        "price_per_month": 600000,
+        "price_per_month": 600000.0,
         "capacity": 6,
         "current_occupants": 3,
         "status": "available",

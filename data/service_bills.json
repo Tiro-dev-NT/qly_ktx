@@ -29,9 +29,9 @@
         "electric_amount": 294948.0,
         "water_amount": 95574.0,
         "total_amount": 390522.0,
-        "status": "unpaid",
+        "status": "paid",
         "due_date": "2026-06-30",
-        "paid_date": null
+        "paid_date": "2026-06-22"
     },
     {
         "bill_id": "HD003_2026_04",
@@ -80,9 +80,9 @@
         "electric_amount": 173556.0,
         "water_amount": 47787.0,
         "total_amount": 221343.0,
-        "status": "unpaid",
+        "status": "paid",
         "due_date": "2026-05-20",
-        "paid_date": null
+        "paid_date": "2026-06-22"
     },
     {
         "bill_id": "HD008_2026_05",
@@ -99,6 +99,40 @@
         "total_amount": 226202.0,
         "status": "unpaid",
         "due_date": "2026-06-30",
+        "paid_date": null
+    },
+    {
+        "bill_id": "HD001_2026_06",
+        "contract_id": "HD001",
+        "room_id": "P101",
+        "month": 6,
+        "year": 2026,
+        "electric_start": 0,
+        "electric_end": 50,
+        "water_start": 0,
+        "water_end": 5,
+        "electric_amount": 107136.0,
+        "water_amount": 79645,
+        "total_amount": 186781.0,
+        "status": "unpaid",
+        "due_date": "2026-07-22",
+        "paid_date": null
+    },
+    {
+        "bill_id": "HD007_2026_06",
+        "contract_id": "HD007",
+        "room_id": "P103",
+        "month": 6,
+        "year": 2026,
+        "electric_start": 0,
+        "electric_end": 180,
+        "water_start": 0,
+        "water_end": 3,
+        "electric_amount": 423468.0,
+        "water_amount": 47787,
+        "total_amount": 471255.0,
+        "status": "unpaid",
+        "due_date": "2026-07-22",
         "paid_date": null
     }
 ]
